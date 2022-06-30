@@ -1,0 +1,23 @@
+Logic to swap first and last digit of a number
+
+read(num)
+lastDigit ← num % 10;
+digits ← log10(num);
+firstDigit ← num / pow(10, digits);
+    
+swappedNum ← lastDigit * pow(10, digits);
+swappedNum ← swappedNum + num % pow(10, digits);
+swappedNum ← swappedNum - lastDigit;
+swappedNum ← swappedNum + firstDigit;
+------------------------------------------------------------------
+
+Suppose num = 12345
+
+lastDigit  = 12345 % 10 => 5
+digits     = log10(12345) => 4
+firstDigit = 12345 / pow (10, 4) => 12345 / 10000 => 1
+
+swappedNum = 5 * pow(10, 4) => 5 * 10000 => 50000
+swappedNum = 50000 + (12345 % 10000) => 50000 + 2345 => 52345
+swappedNum = 52345 - 5 => 52340
+swappedNum = 52340 + 1 => 52341
